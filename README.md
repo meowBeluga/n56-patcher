@@ -17,6 +17,11 @@
 
 </div>
 
+> [!NOTE]
+> 当前分支（`n61ap`）是 iPhone 6（N61AP）的移植分支，**只有骨架、不可启动**，
+> 见 [README.n61.md](README.n61.md) 与 [移植方案](docs/porting/N61AP.md)。
+> 想用上游的 6 Plus 流程，请切回 `master`。
+
 ---
 
 默认从干净 J96 内核重建 KC，同时生成 iBSS、iBEC、DeviceTree、TrustCache 五个启动镜像。内核、设备树与系统补丁按版本放在 `patches/ios13/`、`ios14/`、`ios15/`；共用算法与设备资源放在 `patches/shared/`。
