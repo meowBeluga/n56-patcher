@@ -132,6 +132,8 @@ def make_flow(args):
         if workdir is None:
             workdir = os.path.join(REPO, "build", "slots", args.slot)
     ctx = Context(args.target, workdir=workdir, dry_run=args.dry_run)
+    if ctx.t.get("porting_status") == "scaffold" and not ctx.dry_run:
+        log.die(f"{ctx.t['name']} 尚未移植完成（骨架）：{ctx.t.get('porting_note', '')}")
     if slot:
         ctx.slot = slot
         ctx.donor_dir = donor
